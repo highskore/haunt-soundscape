@@ -1,0 +1,23 @@
+[plugin]
+id = "dev.haunt.soundscape"
+name = "Soundscape"
+description = "Hear your agents: a chime when one needs you, a bell when it's done, optional rain"
+version = "0.1.0"
+api = "0.5"
+entry = "target/wasm32-wasip2/release/haunt_plugin.wasm"
+license = "MIT"
+
+[capabilities]
+# Only each agent's state is followed; no event text is kept.
+events = ["agent.session-start", "agent.prompt", "agent.subagent", "agent.tool", "agent.permission-request", "agent.question", "agent.stop", "agent.unknown"]
+sound = true
+# Retries a refused rain change, so rain never outlasts the agents.
+timer = true
+
+[settings]
+chimes = { type = "bool", default = true, description = "Each agent's own chime when it needs you" }
+bells = { type = "bool", default = true, description = "A soft bell when an agent finishes, lower when it fails" }
+rain = { type = "bool", default = false, description = "A quiet rain that thickens as more agents run" }
+volume = { type = "integer", default = 50, description = "Volume of every sound, 0 to 100" }
+rain_full_at = { type = "integer", default = 6, description = "Running agents for the heaviest rain" }
+unverified = { type = "bool", default = false, description = "Also follow events without the tab's nonce, which anything in the terminal can forge" }
