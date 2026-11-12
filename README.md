@@ -1,6 +1,17 @@
+<div align="center">
+
+<img src="docs/icon.png" width="96" alt="">
+
 # Soundscape
 
-Hear your agents: a chime when one needs you, a bell when it's done, optional rain.
+**Hear your agents: a chime when one needs you, a bell when it's done, optional rain.**
+
+[![Haunt plugin](https://img.shields.io/badge/Haunt-plugin-D97757)](https://github.com/highskore/haunt-hackathon)
+![Plugin API 0.5](https://img.shields.io/badge/plugin%20API-0.5-111)
+![WASM component](https://img.shields.io/badge/WASM-component-654ff0?logo=webassembly&logoColor=white)
+![MIT licence](https://img.shields.io/badge/licence-MIT-6b7280)
+
+</div>
 
 Each agent gets its own soft chime, a note of the C major pentatonic picked from its name, so you can hear who needs you without looking: api is always the same note. A soft bell rings when an agent finishes, a fourth lower when its turn fails. Turn on `rain` for a quiet rain that thickens as more agents run and stops when they all do.
 
